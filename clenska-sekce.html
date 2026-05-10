@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Členská sekce | Holka od border</title>
+    <meta name="description" content="Členská sekce Holky od border s video lekcemi, e-booky, komunitou a bonusy pro členy.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.holkaodborder.cz/clenska-sekce.html">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Členská sekce | Holka od border">
+    <meta property="og:description" content="Video lekce, komunita, slevy a materiály pro členy Holky od border.">
+    <meta property="og:url" content="https://www.holkaodborder.cz/clenska-sekce.html">
+    <meta property="og:site_name" content="Holka od border">
+    <meta property="og:image" content="https://www.holkaodborder.cz/foto2.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="index.html#uvod" class="nav-brand">Holka od border</a>
+        <div class="menu-toggle">
+            <div class="hamburger"></div>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html#uvod">Úvod</a></li>
+            <li><a href="index.html#o-mne">Moje smečka</a></li>
+            <li><a href="index.html#sluzby">Tréninky</a></li>
+            <li><a href="rezervace.html">Rezervace</a></li>
+            <li><a href="#" class="active">Členská sekce</a></li>
+            <li><a href="recenze.html">Recenze</a></li>
+            <li><a href="index.html#kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="section members-section">
+            <h2 class="reveal">ČLENSKÁ SEKCE</h2>
+            <div class="members-container">
+                <!-- Login Form -->
+                <div class="login-form reveal" id="login-form">
+                    <h2>Přihlášení</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Heslo</label>
+                            <input type="password" id="password" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Přihlásit se</button>
+                    </form>
+                    <div class="form-links">
+                        <a href="#" onclick="showResetForm()" class="forgot-password">Zapomenuté heslo?</a>
+                        <a href="#" onclick="showRegisterForm()" class="register">Registrace nového člena</a>
+                    </div>
+                </div>
+
+                <!-- Register Form (initially hidden) -->
+                <div class="login-form reveal" id="register-form" style="display: none;">
+                    <h2>Registrace</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="reg-email">Email</label>
+                            <input type="email" id="reg-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-password">Heslo</label>
+                            <input type="password" id="reg-password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Potvrzení hesla</label>
+                            <input type="password" id="confirm-password" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Registrovat se</button>
+                    </form>
+                    <div class="form-links">
+                        <a href="#" onclick="showLoginForm()">Zpět na přihlášení</a>
+                    </div>
+                </div>
+
+                <!-- Reset Password Form (initially hidden) -->
+                <div class="login-form reveal" id="reset-password-form" style="display: none;">
+                    <h2>Obnovení hesla</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="reset-email">Email</label>
+                            <input type="email" id="reset-email" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Obnovit heslo</button>
+                    </form>
+                    <div class="form-links">
+                        <a href="#" onclick="showLoginForm()">Zpět na přihlášení</a>
+                    </div>
+                </div>
+
+                <!-- Member Content (initially hidden) -->
+                <div id="member-content" style="display: none;">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+
+                <!-- Benefits section remains unchanged -->
+                <div class="members-benefits reveal">
+                    <h2>Výhody členství</h2>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <i class="fas fa-video"></i>
+                            <h3>Video lekce</h3>
+                            <p>Přístup k exkluzivním video lekcím a tutoriálům</p>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-comments"></i>
+                            <h3>Komunita</h3>
+                            <p>Přístup do uzavřené Facebook skupiny</p>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-percentage"></i>
+                            <h3>Slevy</h3>
+                            <p>Speciální slevy na tréninky a konzultace</p>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-book"></i>
+                            <h3>E-booky</h3>
+                            <p>Přístup k e-bookům a tréninkovým plánům</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Přidat tyto funkce pro přepínání formulářů
+        function showLoginForm() {
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('register-form').style.display = 'none';
+            document.getElementById('reset-password-form').style.display = 'none';
+        }
+
+        function showRegisterForm() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('register-form').style.display = 'block';
+            document.getElementById('reset-password-form').style.display = 'none';
+        }
+
+        function showResetForm() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('register-form').style.display = 'none';
+            document.getElementById('reset-password-form').style.display = 'block';
+        }
+    </script>
+    <script src="members.js"></script>
+</body>
+</html>

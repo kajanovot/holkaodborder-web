@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recenze a zkušenosti klientů | Holka od border</title>
+    <meta name="description" content="Přečtěte si zkušenosti klientů s tréninky psů u Holky od border nebo přidejte vlastní recenzi.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.holkaodborder.cz/recenze.html">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Recenze a zkušenosti klientů | Holka od border">
+    <meta property="og:description" content="Zkušenosti klientů s výcvikem psů a možnost přidat vlastní recenzi.">
+    <meta property="og:url" content="https://www.holkaodborder.cz/recenze.html">
+    <meta property="og:site_name" content="Holka od border">
+    <meta property="og:image" content="https://www.holkaodborder.cz/foto1.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="index.html#uvod" class="nav-brand">Holka od border</a>
+        <div class="menu-toggle">
+            <div class="hamburger"></div>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html#uvod">Úvod</a></li>
+            <li><a href="index.html#o-mne">Moje smečka</a></li>
+            <li><a href="index.html#sluzby">Tréninky</a></li>
+            <li><a href="rezervace.html">Rezervace</a></li>
+            <li><a href="clenska-sekce.html">Členská sekce</a></li>
+            <li><a href="#" class="active">Recenze</a></li>
+            <li><a href="index.html#kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="section reviews-page">
+            <p class="section-kicker">Napiš zpětnou vazbu</p>
+            <h2>Podělte se o svou zkušenost!</h2>
+            <p class="section-intro">Recenze se po odeslání veřejně zobrazí na této stránce. Díky za pár vět, které pomůžou dalším lidem rozhodnout se pro trénink.</p>
+
+            <form id="review-form" action="/api/reviews" method="POST">
+                <label for="name">Jméno:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="rating">Hodnocení:</label>
+                <div class="rating">
+                    <span class="star" data-value="5">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="1">★</span>
+                    <input type="hidden" id="rating" name="rating" value="0">
+                </div>
+
+                <label for="review">Recenze:</label>
+                <textarea id="review" name="review" required></textarea>
+
+                <div class="form-group">
+                    <input type="checkbox" id="gdpr" name="gdpr" required>
+                    <label for="gdpr">Souhlasím se zpracováním osobních údajů podle GDPR</label>
+                </div>
+
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAADMmeEVAT7ApTlBX" data-theme="light" data-language="cs"></div>
+                <button type="submit">Odeslat recenzi</button>
+                <p class="form-status" role="status" aria-live="polite"></p>
+            </form>
+
+            <h3>Veřejné recenze:</h3>
+            <div id="reviews" class="reviews-container"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
